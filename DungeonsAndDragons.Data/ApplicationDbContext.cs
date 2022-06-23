@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using DungeonsAndDragons.Data.Entity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons.Data
@@ -9,5 +10,9 @@ namespace DungeonsAndDragons.Data
             : base(options)
         {
         }
+
+        public DbSet<Character> Characters { get; set; }
+        public DbSet<Race> Races { get; set; }
+        public DbSet<Class> Classes { get; set; }
     }
 }
