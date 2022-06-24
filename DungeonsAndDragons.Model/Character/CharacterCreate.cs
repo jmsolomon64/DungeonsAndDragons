@@ -5,16 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DungeonsAndDragons.Data.Entity
+namespace DungeonsAndDragons.Model.Character
 {
-    public class Character
+    public class CharacterCreate
     {
-        [Key]
-        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
-        public int RaceId { get; set;}
+        public int RaceId { get; set; }
         [Required]
         public int ClassId { get; set; }
         [Required]
