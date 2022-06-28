@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,16 @@ namespace DungeonsAndDragons.Data.Entity
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        [Required]
+
+        [ForeignKey(nameof(Race))]
         public int RaceId { get; set;}
-        [Required]
+
+        public virtual Race Race { get; set; }
+
+        [ForeignKey(nameof(Class))]
         public int ClassId { get; set; }
+
+        public virtual Class Class { get; set; }
         [Required]
         public int Level { get; set; }
         [Required]
